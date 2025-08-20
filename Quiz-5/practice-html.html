@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Practice</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    #output { margin-top: 20px; padding: 10px; border: 1px solid #ccc; }
+    button { margin: 5px; padding: 8px 12px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h2>JavaScript Practice Page</h2>
+
+  <!-- Buttons for each task -->
+  <button id="varButton">Test Variables</button>
+  <button id="fruitButton">Check Favorite Fruit</button>
+  <button id="loopButton">Run Loops</button>
+  <button id="styleButton">Change Text Style</button>
+
+  <!-- Display area -->
+  <div id="output">Results will appear here...</div>
+
+  <script>
+    const output = document.getElementById("output");
+
+    // 1. Variable declaration & dynamic typing
+    document.getElementById("varButton").addEventListener("click", function() {
+      let score = 95;
+      let message = "Score: " + score + "<br>";
+      score = "Excellent";
+      message += "Now score is a string: " + score;
+      output.innerHTML = message;
+    });
+
+    // 2. Decision-making with if & switch
+    document.getElementById("fruitButton").addEventListener("click", function() {
+      let fruit = prompt("Enter your favorite fruit:");
+      let message = "";
+      if (fruit === "apple") {
+        message = "You like apples!";
+      } else {
+        switch (fruit) {
+          case "banana":
+            message = "Bananas are great for energy.";
+            break;
+          case "orange":
+            message = "Oranges are full of vitamin C.";
+            break;
+          default:
+            message = "That's a nice choice!";
+        }
+      }
+      output.innerHTML = message;
+    });
+
+    // 3. Loops
+    document.getElementById("loopButton").addEventListener("click", function() {
+      let message = "<strong>For loop:</strong><br>";
+      for (let i = 1; i <= 5; i++) {
+        message += i + " ";
+      }
+
+      message += "<br><strong>While loop:</strong><br>";
+      let j = 1;
+      while (j <= 5) {
+        message += j + " ";
+        j++;
+      }
+
+      message += "<br><strong>Do...while loop:</strong><br>";
+      let k = 1;
+      do {
+        message += k + " ";
+        k++;
+      } while (k <= 5);
+
+      output.innerHTML = message;
+    });
+
+    // 4. DOM Manipulation (change text & style)
+    document.getElementById("styleButton").addEventListener("click", function() {
+      output.textContent = "The style has been changed!";
+      output.style.color = "red";
+      output.style.fontWeight = "bold";
+    });
+  </script>
+</body>
+</html>
