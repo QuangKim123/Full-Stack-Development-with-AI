@@ -1,0 +1,22 @@
+<script type="text/babel">
+  function TodoList() {
+    return (
+      <div>
+        <h3>My To-Do List</h3>
+        <ul>
+          <li>Finish React Assignment</li>
+          <li>Read about Virtual DOM</li>
+          <li>Practice making reusable components</li>
+        </ul>
+      </div>
+    );
+  }
+
+  const root = ReactDOM.createRoot(document.getElementById("root"));
+  root.render(
+    <div>
+      <GreetingComponent />
+      <TodoList />
+    </div>
+  );
+</script>
